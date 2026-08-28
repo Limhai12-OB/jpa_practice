@@ -9,7 +9,6 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class User {
 
     @Id
@@ -21,5 +20,8 @@ public class User {
     private String email;
 
     private String password;
+
+    @OneToOne(mappedBy = "user")
+    private UserProfile userProfile;
 
 }
